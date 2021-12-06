@@ -15,4 +15,5 @@
 
 sudo  head -n -3 /etc/apache2/sites-enabled/000-default.conf > /tmp/000-default.tmp
 sudo mv  /tmp/000-default.tmp /etc/apache2/sites-enabled/000-default.conf
-sudo  systemctl restart apache2
+sudo service  apache2 reload 
+#sudo  systemctl restart apache2
