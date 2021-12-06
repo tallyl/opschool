@@ -10,3 +10,9 @@
 
 #sudo  systemctl start apache2
 
+#/etc/apache2/sites-enabled/000-default.conf
+#/etc/apache2/apache2.conf
+
+sudo  head -n -3 /etc/apache2/sites-enabled/000-default.conf > /tmp/000-default.tmp
+sudo mv  /tmp/000-default.tmp /etc/apache2/sites-enabled/000-default.conf
+sudo  systemctl restart apache2
