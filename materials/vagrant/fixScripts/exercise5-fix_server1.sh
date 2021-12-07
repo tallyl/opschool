@@ -1,7 +1,6 @@
 #!/bin/bash
 #add fix to exercise5-server1 here
 
-
 sudo sed -i '/StrictHostKeyChecking/c StrictHostKeyChecking no' /etc/ssh/ssh_config
 sudo service sshd restart
 
@@ -58,19 +57,9 @@ chmod 600 ~vagrant/.ssh/id_rsa.pub
 
 
 cat <<EOF >> /home/vagrant/.ssh/authorized_keys
-sh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnT/oshHwbft6dRQJOjwWBlu0siIPiTQE5Up53IyTBEydY3TYQ88LCdQHGsbKW/tkecse0B6MbdqDkrcCyQrj3+dgBHLusrhlC60JWC7Sbs+1kYXxcf/SVNdwiZhL+v44wtavT7eVFJSHC3B1LvyHLF/v9gwoFgkYiCTmJlH2my5No85cKCAQqI1tiULPt7qm23TEMClgDIP7UPuWMzRMBQOIAcgJ76oiV1V6r+1ijQLlTmsAJLw5UN9cjBMyn6ATpj+S6Cb+G2c26Oh4dt9/86qiQ31ehIUsqCFtkTURfzloyxLH297ZxPKHv6Fg2GKkZzTCIjkRp1QOwRea27DknsWmlYS23h8r+GO6Roo3zJy41MY7+4ZSpGYXgePN7ucQcKo0jMIo29ZxO8/ZDHnjyzz2yturWKk4ykEL8fHJ/ZRPioqLU8gPsfaprxMec9o9d5v0Prbunj8jmVLtWvZBjsQNv4tAe6bGAMFBk+Zt0i5TJLVXiFMhiI6b83SwAwvc= vagrant@server2
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnT/oshHwbft6dRQJOjwWBlu0siIPiTQE5Up53IyTBEydY3TYQ88LCdQHGsbKW/tkecse0B6MbdqDkrcCyQrj3+dgBHLusrhlC60JWC7Sbs+1kYXxcf/SVNdwiZhL+v44wtavT7eVFJSHC3B1LvyHLF/v9gwoFgkYiCTmJlH2my5No85cKCAQqI1tiULPt7qm23TEMClgDIP7UPuWMzRMBQOIAcgJ76oiV1V6r+1ijQLlTmsAJLw5UN9cjBMyn6ATpj+S6Cb+G2c26Oh4dt9/86qiQ31ehIUsqCFtkTURfzloyxLH297ZxPKHv6Fg2GKkZzTCIjkRp1QOwRea27DknsWmlYS23h8r+GO6Roo3zJy41MY7+4ZSpGYXgePN7ucQcKo0jMIo29ZxO8/ZDHnjyzz2yturWKk4ykEL8fHJ/ZRPioqLU8gPsfaprxMec9o9d5v0Prbunj8jmVLtWvZBjsQNv4tAe6bGAMFBk+Zt0i5TJLVXiFMhiI6b83SwAwvc= vagrant@server2
 EOF
 
 chown vagrant:vagrant ~vagrant/.ssh/authorized_keys
 chmod 600 ~vagrant/.ssh/authorized_keys
 
-
-
-sudo sh -c ' echo 
-"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnT/oshHwbft6dRQJOjwWBlu0siIPiTQE5Up53IyTBEydY3TYQ88LCdQHGsbKW/tkecse0B6MbdqDkrcCyQrj3+dgBHLusrhlC60JWC7Sbs+1kYXxcf/SVNdwiZhL+v44wtavT7eVFJSHC3B1LvyHLF/v9gwoFgkYiCTmJlH2my5No85cKCAQqI1tiULPt7qm23TEMClgDIP7UPuWMzRMBQOIAcgJ76oiV1V6r+1ijQLlTmsAJLw5UN9cjBMyn6ATpj+S6Cb+G2c26Oh4dt9/86qiQ31ehIUsqCFtkTURfzloyxLH297ZxPKHv6Fg2GKkZzTCIjkRp1QOwRea27DknsWmlYS23h8r+GO6Roo3zJy41MY7+4ZSpGYXgePN7ucQcKo0jMIo29ZxO8/ZDHnjyzz2yturWKk4ykEL8fHJ/ZRPioqLU8gPsfaprxMec9o9d5v0Prbunj8jmVLtWvZBjsQNv4tAe6bGAMFBk+Zt0i5TJLVXiFMhiI6b83SwAwvc= vagrant@server2" > ~vagrant/.ssh/authorized_keys '
-
-chown vagrant:vagrant ~vagrant/.ssh/authorized_keys
-sudo chmod 600 ~vagrant/.ssh/authorized_keys
-
-
-#sudo chmod 600 ~vagrant/.ssh/id_rsa
