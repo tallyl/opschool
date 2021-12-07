@@ -5,7 +5,7 @@ sudo sed -i '/StrictHostKeyChecking/c StrictHostKeyChecking no' /etc/ssh/ssh_con
 sudo service sshd restart
 
 cat <<EOF >> /home/vagrant/.ssh/id_rsa
------BEGIN OPENSSH PRIVATE KEY-----
+-----BEGIN RSA PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 NhAAAAAwEAAQAAAYEAp0/6LIR8G37enUUCTo8FgZbtLIiD4k0BOVKedyMkwRMnWN02EPPC
 wnUBxrGylv7ZHnLHtAejG3ag5K3AskK49/nYARy7rK4ZQutCVgu0m7PtZGF8XH/0lTXcIm
@@ -42,7 +42,7 @@ ZNYu+hF1WjjwvNiLbJt5Cd9q5IE9/3kxuezdKHU2KDxMIOx92q3Gw344+vr7BNBqUGxTxB
 w8AiSMcrASynHpF5KlPaMeA9zuB8ifFwnHEGV2bhlhIpsZUj2ctMkYGqX44fo8Vp110QUv
 FAAoDRfH09hcqLUyWzkkEGl4VX4N4ZZlNSIyiLgblGMaFNXADo2Bu1v8wo+pJjbq8iknWs
 aiZOAiPrtaC9MAAAAPdmFncmFudEBzZXJ2ZXIyAQIDBA==
------END OPENSSH PRIVATE KEY-----
+-----END RSA PRIVATE KEY-----
 EOF
 
 chown vagrant:vagrant ~vagrant/.ssh/id_rsa
