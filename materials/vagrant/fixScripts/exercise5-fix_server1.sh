@@ -2,10 +2,13 @@
 #add fix to exercise5-server1 here
 
 sudo sed -i '/StrictHostKeyChecking/c StrictHostKeyChecking no' /etc/ssh/ssh_config
+
+sudo echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+sudo echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 sudo service sshd restart
 
-cat <<EOF >> /home/vagrant/.ssh/id_rsa
------BEGIN RSA PRIVATE KEY-----
+cat <<EOF >> ~vagrant/.ssh/id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 NhAAAAAwEAAQAAAYEAp0/6LIR8G37enUUCTo8FgZbtLIiD4k0BOVKedyMkwRMnWN02EPPC
 wnUBxrGylv7ZHnLHtAejG3ag5K3AskK49/nYARy7rK4ZQutCVgu0m7PtZGF8XH/0lTXcIm
@@ -42,13 +45,13 @@ ZNYu+hF1WjjwvNiLbJt5Cd9q5IE9/3kxuezdKHU2KDxMIOx92q3Gw344+vr7BNBqUGxTxB
 w8AiSMcrASynHpF5KlPaMeA9zuB8ifFwnHEGV2bhlhIpsZUj2ctMkYGqX44fo8Vp110QUv
 FAAoDRfH09hcqLUyWzkkEGl4VX4N4ZZlNSIyiLgblGMaFNXADo2Bu1v8wo+pJjbq8iknWs
 aiZOAiPrtaC9MAAAAPdmFncmFudEBzZXJ2ZXIyAQIDBA==
------END RSA PRIVATE KEY-----
+-----END OPENSSH PRIVATE KEY-----
 EOF
 
 chown vagrant:vagrant ~vagrant/.ssh/id_rsa
 chmod 600 ~vagrant/.ssh/id_rsa
 
-cat <<EOF >> /home/vagrant/.ssh/id_rsa.pub
+cat <<EOF >> ~vagrant/.ssh/id_rsa.pub
 sh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnT/oshHwbft6dRQJOjwWBlu0siIPiTQE5Up53IyTBEydY3TYQ88LCdQHGsbKW/tkecse0B6MbdqDkrcCyQrj3+dgBHLusrhlC60JWC7Sbs+1kYXxcf/SVNdwiZhL+v44wtavT7eVFJSHC3B1LvyHLF/v9gwoFgkYiCTmJlH2my5No85cKCAQqI1tiULPt7qm23TEMClgDIP7UPuWMzRMBQOIAcgJ76oiV1V6r+1ijQLlTmsAJLw5UN9cjBMyn6ATpj+S6Cb+G2c26Oh4dt9/86qiQ31ehIUsqCFtkTURfzloyxLH297ZxPKHv6Fg2GKkZzTCIjkRp1QOwRea27DknsWmlYS23h8r+GO6Roo3zJy41MY7+4ZSpGYXgePN7ucQcKo0jMIo29ZxO8/ZDHnjyzz2yturWKk4ykEL8fHJ/ZRPioqLU8gPsfaprxMec9o9d5v0Prbunj8jmVLtWvZBjsQNv4tAe6bGAMFBk+Zt0i5TJLVXiFMhiI6b83SwAwvc= vagrant@server2
 EOF
 
@@ -56,7 +59,7 @@ chown vagrant:vagrant ~vagrant/.ssh/id_rsa.pub
 chmod 600 ~vagrant/.ssh/id_rsa.pub
 
 
-cat <<EOF >> /home/vagrant/.ssh/authorized_keys
+cat <<EOF >> ~vagrant/.ssh/authorized_keys
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnT/oshHwbft6dRQJOjwWBlu0siIPiTQE5Up53IyTBEydY3TYQ88LCdQHGsbKW/tkecse0B6MbdqDkrcCyQrj3+dgBHLusrhlC60JWC7Sbs+1kYXxcf/SVNdwiZhL+v44wtavT7eVFJSHC3B1LvyHLF/v9gwoFgkYiCTmJlH2my5No85cKCAQqI1tiULPt7qm23TEMClgDIP7UPuWMzRMBQOIAcgJ76oiV1V6r+1ijQLlTmsAJLw5UN9cjBMyn6ATpj+S6Cb+G2c26Oh4dt9/86qiQ31ehIUsqCFtkTURfzloyxLH297ZxPKHv6Fg2GKkZzTCIjkRp1QOwRea27DknsWmlYS23h8r+GO6Roo3zJy41MY7+4ZSpGYXgePN7ucQcKo0jMIo29ZxO8/ZDHnjyzz2yturWKk4ykEL8fHJ/ZRPioqLU8gPsfaprxMec9o9d5v0Prbunj8jmVLtWvZBjsQNv4tAe6bGAMFBk+Zt0i5TJLVXiFMhiI6b83SwAwvc= vagrant@server2
 EOF
 
