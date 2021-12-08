@@ -41,8 +41,10 @@ chown vagrant:vagrant ~vagrant/.ssh/id_rsa
 chmod 600 ~vagrant/.ssh/id_rsa
 
 # for ex6 to work from root as well
+mkdir -p /root/.ssh/
+chhmod 700 /root/.ssh/
 cp ~vagrant/.ssh/id_rsa ~/.ssh/
-chmod 600 ~vagrant/.ssh/id_rsa
+chmod 600 /root/.ssh/id_rsa
 
 
 cat <<EOF >> ~vagrant/.ssh/id_rsa.pub
