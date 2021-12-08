@@ -42,7 +42,7 @@ chmod 600 ~vagrant/.ssh/id_rsa
 
 # for ex6 to work from root as well
 mkdir -p /root/.ssh/
-chhmod 700 /root/.ssh/
+chmod 700 /root/.ssh/
 cp ~vagrant/.ssh/id_rsa ~/.ssh/
 chmod 600 /root/.ssh/id_rsa
 
@@ -52,11 +52,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7
 EOF
 
 chown vagrant:vagrant ~vagrant/.ssh/id_rsa.pub
-chmod 600 ~vagrant/.ssh/id_rsa.pub
+chmod 644 ~vagrant/.ssh/id_rsa.pub
 
 # for ex6 to work from root as well
 cp ~vagrant/.ssh/id_rsa.pub ~/.ssh/
-chmod 600 ~/.ssh/id_rsa.pub
+chmod 644 ~/.ssh/id_rsa.pub
 
 
 cat <<EOF >> ~vagrant/.ssh/authorized_keys

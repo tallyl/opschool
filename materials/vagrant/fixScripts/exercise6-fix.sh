@@ -43,7 +43,7 @@ do
            FILESIZE=$(stat -c%s "$var")
            #echo " size of file "  $var " is" $FILESIZE " bytes"
            sum=$(($sum + $FILESIZE))
-           echo "scp " $var " "  $dest_server":"$path"/" 
+           #echo "scp " $var " "  $dest_server":"$path"/" 
 		   scp $var $dest_server:$path/
     else
        echo "file" $var " does not exist !! "
